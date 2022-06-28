@@ -24,8 +24,8 @@ model = tf.keras.models.load_model('saved_model/animals_cnn')
 model.summary()
 
 
-image_path = input("Enter the name of the image: ")
-image_path = tf.keras.utils.get_file(image_path, origin=f"test_new_images/{image_path}")
+image_url = input("Enter the url of the image: ")
+image_path = tf.keras.utils.get_file('new_image', origin=image_url)
 
 img = tf.keras.utils.load_img(
     image_path, target_size=(img_height, img_width)
